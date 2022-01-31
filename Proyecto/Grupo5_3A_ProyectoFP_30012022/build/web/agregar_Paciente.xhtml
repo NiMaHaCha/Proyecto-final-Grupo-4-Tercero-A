@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <title>Agregar Datos del Paciente</title>
+    </h:head>
+    <h:body>
+        <h2>AGREGAR DATOS DEL PACIENTE, PODER LEGAL Y ALERGÍAS</h2>
+        <h:form>
+            <table style="width: 70%; border: 3px solid #7F8783; border-collapse: collapse">
+                <tr style="background-color: #D9C1FC;">
+                    <th colspan="13" style="font-size: 20px; text-align: left; border: 2px solid #7F8783;">1 REGISTRO DE ADMISIÓN
+                    </th>
+                </tr>
+                <tr style="background-color: #C9FCC1;">
+                    <td colspan="2" style="font-size: 10px; text-align: center;">APELLIDO PATERNO</td>
+                    <td colspan="2" style="font-size: 10px; text-align: center;">APELLIDO MATERNO</td>
+                    <td colspan="2" style="font-size: 10px; text-align: center;">PRIMER NOMBRE</td>
+                    <td colspan="2" style="font-size: 10px; text-align: center;">SEGUNDO NOMBRE</td>
+                    <td colspan="5" style="font-size: 10px; text-align: center;">N° CÉDULA DE CIUDADANÍA</td>
+                </tr>
+                <tr>
+                    <!-- APELLIDO PATERNO -->
+                    <td colspan="2" style="text-align: center; border: 2px solid #7F8783"><h:inputText value="#{controllerManagedBean.apellidop}" style="border: none; width: 98%;" /></td>
+                    <!-- APELLIDO MATERNO -->
+                    <td colspan="2" style="text-align: center; border: 2px solid #7F8783"><h:inputText value="#{controllerManagedBean.apellidom}" style="border: none; width: 98%;" /></td>
+                    <!-- PRIMER NOMBRE -->
+                    <td colspan="2" style="text-align: center; border: 2px solid #7F8783"><h:inputText value="#{controllerManagedBean.nombre1}" style="border: none; width: 98%;" /></td>
+                    <!-- SEGUNDO NOMBRE -->
+                    <td colspan="2" style="text-align: center; border: 2px solid #7F8783"><h:inputText value="#{controllerManagedBean.nombre2}" style="border: none; width: 98%;" /></td>
+                    <!-- CÉDULA -->
+                    <td colspan="2" style="text-align: center; border: 2px solid #7F8783"><h:inputText value="#{controllerManagedBean.num_cedula}" style="border: none; width: 98%;" /></td>
+                </tr>
+            </table>
+            <hr/>
+            <div style="
+                 background-color: #B4B4B4;
+                 font-size: 20px;
+                 width: 35%;
+                 ">
+                <strong>PODER LEGAL</strong>
+            </div>
+            <div>
+                <label><strong>NOMBRE:</strong> </label>
+                <!-- NOMBRE -->
+                <h:inputText style="margin: 5px 20px; width: 950px;" value="#{controllerManagedBean.nombre_poder}"/>
+            </div>
+            <div>
+                <label><strong>DIRECCIÓN:</strong> </label>
+                <!-- DIRECCIÓN -->
+                <h:inputText style="margin: 5px 20px; width: 930px;" value="#{controllerManagedBean.direccion}"/>
+            </div>
+            <div>
+                <label><strong>CIUDAD:</strong> </label>
+                <!-- CIUDAD -->
+                <h:inputText style="margin: 5px 20px;" value="#{controllerManagedBean.ciudad}"/>
+                <label><strong>PROVINCIA:</strong> </label>
+                <!-- CANTÓN -->
+                <h:inputText style="margin: 5px 20px;" value="#{controllerManagedBean.provincia}"/>
+            </div>
+            <div>
+                <label><strong>FECHA DE NACIMIENTO:</strong> </label>
+                <!-- FECHA DE NACIMIENTO -->
+                <h:inputText style="margin: 5px 20px;" value="#{controllerManagedBean.fecha_nacimiento}"/>
+                <label><strong>TELÉFONO:</strong> </label>
+                <!-- TELÉFONO -->
+                <h:inputText style="margin: 5px 20px;" value="#{controllerManagedBean.telefono}"/>
+                <label><strong>SEGURO SOCIAL:</strong> </label>
+                <!-- SEGURO SOCIAL -->
+                <h:inputText style="margin: 5px 20px;" value="#{controllerManagedBean.seguro_social}"/>
+            </div>
+            <div>
+                <label><strong>RELACIÓN CON EL PACIENTE:</strong> </label>
+                <!-- RELACIÓN CON EL PACIENTE -->
+                <h:inputText style="margin: 5px 20px; width: 790px;" value="#{controllerManagedBean.relacion_paciente}"/>
+            </div>
+            <hr/>
+            <h3><u>ALERGIAS:</u></h3>
+            <h:inputTextarea cols="105" rows="6" value="#{controllerManagedBean.alergias}"></h:inputTextarea>
+            <br/><br/>
+            <div>
+                <h:commandButton value="Borrar" type="reset" style="margin-left: 10px"></h:commandButton>
+                <h:commandButton value="Guardar" type="submit" action="#{controllerManagedBean.guardarPaciente()}" style="margin-left: 10px"></h:commandButton>
+            </div>
+            <br/><br/>
+            <h:commandButton value="Regresar" type="submit" action="#{controllerManagedBean.irListado()}" style="margin-left: 10px"></h:commandButton>
+        </h:form>
+    </h:body>
+</html>
+
